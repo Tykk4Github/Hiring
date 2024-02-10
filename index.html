@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tykk -Job Hiring</title>
+  <link rel="icon" href="title.jpg">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      transition: background-color 0.5s ease;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2; /* Ensure the navigation bar is above the section */
+    }
+
+    nav .contact-dropdown {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    nav .contact-dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    nav .contact-dropdown:hover .contact-dropdown-content {
+      display: block;
+    }
+
+    nav .contact-dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    nav .contact-dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white; /* Set text color to white */
+      margin: 0 15px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      bottom: -2px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ccc; /* Change text color on hover */
+    }
+
+    nav a:hover::before {
+      width: 100%;
+    }
+
+    /* Header Section */
+    header {
+      background-image: url('background.jpg');
+      background-size: 80%; /* Adjust the background size as needed */
+      background-position: center;
+      color: white;
+      text-align: center;
+      height: 100vh; /* Full height of the viewport */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px; /* Padding for content */
+      opacity: 0; /* Initial opacity for the spawning animation */
+      animation: fadeIn 1s ease-out forwards; /* Animation for spawning */
+      position: relative; /* Position relative for overlay */
+    }
+
+    /* Background Overlay */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity */
+      z-index: -1; /* Place the overlay behind the text */
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      border: 2px solid white; /* Border around the text */
+      padding: 10px; /* Padding for the border */
+      display: inline-block; /* Ensure the border wraps around the text */
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    /* About Me Section */
+    .about-me {
+      background-color: #f5f5f5;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    /* Section 2 */
+    section {
+      background-color: white; /* Set full white background */
+      padding: 50px 20px;
+    }
+
+    /* Image Button */
+    .image-button {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      max-width: 200px; /* Set max width for the button */
+      margin: 20px; /* Add some margin for spacing */
+    }
+
+    .image-button img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .image-button:hover {
+      transform: scale(1.05); /* Slightly reduce the scale on hover */
+    }
+
+    /* Clearfix for container */
+    .container::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Float columns */
+    .column {
+      float: left;
+      width: 50%;
+    }
+
+    /* Style the columns */
+    .column img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Responsive layout - makes the columns stack on top of each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="contact-dropdown">
+      <a>Contact Me</a>
+      <div class="contact-dropdown-content">
+        <p>Email: Tykkforbif@gmail.com</p>
+      </div>
+    </div>
+    <a onclick="scrollToSection('about')">About</a>
+  </nav>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Make your dreams come true</h1>
+    <p>With Tykk's awesome websites</p>
+  </header>
+
+  <!-- About Me Section -->
+  <div class="about-me" id="about">
+    <h2>About Me</h2>
+    <p>Greetings to everyone! I'm Junaid, a 12-year-old aspiring web designer on the brink of turning 13. Designing websites isn't just a hobby; it's my dream to bring happiness to everyone through my creations. Allow me to share a glimpse of my journey—a website I crafted at the tender age of 8. It may have a few bugs, hastily assembled, so please approach it with understanding rather than judgment. The learning process is ongoing, and I'm excited about every step. Feel free to connect with me via the contact details in the navigation bar. I'm eager to hear your thoughts and feedback. Here's to the journey of crafting digital wonders that began in childhood!</p>
+  </div>
+
+  <!-- Section 2 -->
+  <section class="container">
+    <!-- Content for Section 2 -->
+    <div class="column">
+      <h2>My Websites</h2>
+      <!-- Add your website content here -->
+      <div class="image-button">
+        <a href="https://tykk4github.github.io/Main-Pick/index.html" target="_blank"> <!-- Replace with your website link -->
+          <img src="your-button-image.jpg" alt="Image Button">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function scrollToSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
+</body>
+
+</html>
